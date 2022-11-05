@@ -1,0 +1,21 @@
+body {
+    background-color: #F1F2F2;
+}
+
+.bg-promocao {
+    background: rgb(206,15,100);
+    background: linear-gradient(-207deg, rgba(206,15,100,1) 0%, rgba(123,16,131,1) 100%);
+}
+
+.bg-exclusivo {
+    background: rgb(28,155,204);
+    background: linear-gradient(-207deg, rgba(28,155,204,1) 0%, rgba(30,74,198,1) 100%);
+}
+
+.product-card .price {
+    color: #5E3AA4;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
