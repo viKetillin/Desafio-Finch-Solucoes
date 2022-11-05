@@ -4,7 +4,7 @@ const Layout = ({ children }) => {
     return (
         <div className="flex">
             <Sidebar />
-            <div className="max-h-screen overflow-auto grow px-16 pt-10 pb-12">
+            <div className="max-h-screen overflow-auto grow px-4 sm:px-8 md:px-16 pt-10 pb-12">
                 {children}
             </div>
         </div>

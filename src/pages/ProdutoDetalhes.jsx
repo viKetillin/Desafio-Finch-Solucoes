@@ -46,9 +46,9 @@ const ProdutoDetalhes = () => {
                         evt.preventDefault();
                         navigate(`/?search=${search}`)
                     }} className='flex items-center bg-white py-1 rounded-full shadow-md'>
-                        <span className='pl-3 pr-2 py-0.5 border-r text-gray-700'>
+                        <button type='submit' className='pl-3 pr-2 py-0.5 border-r text-gray-700'>
                             <IoSearch size={20} />
-                        </span>
+                        </button>
                         <input value={search} onChange={evt => setSearch(evt.target.value)} placeholder='Buscar' className='bg-transparent text-gray-600 w-60 h-4 pl-2 mr-4 outline-none' type="text" />
                     </form>
                 </div>
