@@ -18,7 +18,8 @@ export function ProductContextProvider({ children }) {
     const [favorites, ToggleFavorite] = useReducer(reducer, JSON.parse(localStorage.getItem("favorites") || "[]"));
 
     useEffect(() => {
-        Axios.get("http://www.mocky.io/v2/5d3b57023000005500a2a0a6").then(resp => setProducts(resp.data.produtos));
+        
+        Axios.get("https://www.mocky.io/v2/5d3b57023000005500a2a0a6").then(resp => setProducts(resp.data.produtos));
     }, []);
 
     useEffect(() => {
