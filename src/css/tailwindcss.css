@@ -12,7 +12,7 @@ body {
     background: linear-gradient(-207deg, rgba(28,155,204,1) 0%, rgba(30,74,198,1) 100%);
 }
 
-.product-card .price {
+.price {
     color: #5E3AA4;
 }
 

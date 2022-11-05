@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useProduct } from "../hooks/Product";
 
 const ProductCard = ({ product }) => {
@@ -7,24 +8,27 @@ const ProductCard = ({ product }) => {
 
     return (
         <div className="product-card bg-white shadow-xl">
-            <div className="h-44">
-                <img src={product.imagem} className="h-full w-full object-cover" alt="" />
-                <div className="-translate-y-full z-10 relative flex justify-end">
-                    {product.promocao &&
-                        <span className="bg-promocao text-sm pb-3 px-6 text-white">
-                            Promoção
-                        </span>}
-                    {product.exclusivo &&
-                        <span className="bg-exclusivo text-sm pb-3 px-6 text-white">
-                            Exclusivo
-                        </span>}
+            <Link to={`/produtos/${product.id}/detalhes`}>
+                <div className="h-44">
+                    <img src={product.imagem} className="h-full w-full object-cover" alt="" />
+                    <div className="-translate-y-full z-10 relative flex justify-end">
+                        {product.promocao &&
+                            <span className="bg-promocao text-sm pb-3 px-6 text-white">
+                                Promoção
+                            </span>}
+                        {product.exclusivo &&
+                            <span className="bg-exclusivo text-sm pb-3 px-6 text-white">
+                                Exclusivo
+                            </span>}
+                    </div>
                 </div>
-            </div>
+            </Link>
+
             <div className="px-5 pb-5 pt-3">
                 <div className="flex items-center justify-between gap-2">
-                    <span className="price text-md font-semibold whitespace-nowrap">
+                    <Link to={`/produtos/${product.id}/detalhes`} className="price text-md font-semibold whitespace-nowrap">
                         R$ {priceConvert(product.valor)}
-                    </span>
+                    </Link>
                     <div className="flex items-center justify-end">
                         <label htmlFor={product.id} className="flex relative flex-wrap cursor-pointer">
                             <input type="checkbox" onChange={() => ToggleFavorite({ id: product.id })} id={product.id} className="sr-only peer" checked={favorites.includes(product.id)} />
@@ -33,10 +37,13 @@ const ProductCard = ({ product }) => {
                         <span className="ml-2 text-sm font-medium text-gray-400">tornar favorito</span>
                     </div>
                 </div>
-                <div className="pt-1">
-                    <h2 className="font-semibold text-gray-800">{product.nome}</h2>
-                    <p className="text-sm pt-2 text-gray-600">{product.decricaoCurta}</p>
+                <div className="pt-2">
+                    <Link to={`/produtos/${product.id}/detalhes`}>
+                        <h2 className="font-semibold text-gray-800">{product.nome}</h2>
+                        <p className="text-sm pt-2 text-gray-600">{product.decricaoCurta}</p>
+                    </Link>
                 </div>
+
             </div>
         </div>
     )
