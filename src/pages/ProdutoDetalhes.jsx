@@ -13,7 +13,7 @@ const ProdutoDetalhes = () => {
     const { id } = useParams();
     const { products, favorites, ToggleFavorite } = useProduct();
 
-    const product = products.find(product => product.id == id);
+    const product = products.find(product => product.id.toString() === id);
 
     const navigate = useNavigate();
     const [search, setSearch] = useState("");
