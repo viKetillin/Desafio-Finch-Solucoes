@@ -38,7 +38,7 @@ const Home = () => {
                 <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 pt-12'>
                     {favoritos.map((product, index) => <ProductCard key={index} product={product} />)}
                 </div> :
-                <h2 className='mt-32 text-center flex items-center justify-center text-2xl gap-2 text-gray-700'><span>Não foi adicionado nenhum produto aos favoritos</span><span><RiEmotionSadLine D /></span></h2>}
+                <h2 className='mt-32 text-center flex items-center justify-center text-2xl gap-2 text-gray-700'><span>Não foi encontrado produtos nos favoritos</span><span><RiEmotionSadLine D /></span></h2>}
         </>
     )
 }

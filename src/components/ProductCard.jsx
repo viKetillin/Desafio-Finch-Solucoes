@@ -25,7 +25,7 @@ const ProductCard = ({ product }) => {
             </Link>
 
             <div className="px-5 pb-5 pt-3">
-                <div className="flex items-center justify-between gap-2">
+                <div className="flex flex-col sm:flex-row items-center justify-between gap-2">
                     <Link to={`/produtos/${product.id}/detalhes`} className="price text-md font-semibold whitespace-nowrap">
                         R$ {priceConvert(product.valor)}
                     </Link>

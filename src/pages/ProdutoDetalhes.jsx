@@ -19,12 +19,12 @@ const ProdutoDetalhes = () => {
     const [search, setSearch] = useState("");
     return (
         <>
-            <div className="flex justify-between mb-6">
+            <div className="flex-col md:flex-row flex justify-between mb-6">
                 {products.length > 0 && product !== undefined ?
                     <div>
-                        <div className="flex gap-10">
+                        <div className="flex flex-col md:flex-row gap-10">
                             <h1 className="text-2xl text-gray-700 font-semibold">{product?.nome}</h1>
-                            <div className="flex items-center gap-4">
+                            <div className="flex flex-col sm:flex-row items-center gap-4">
                                 <span className="price text-2xl whitespace-nowrap">
                                     R$ {priceConvert(product.valor)}
                                 </span>
@@ -40,7 +40,7 @@ const ProdutoDetalhes = () => {
                         <p className="text-gray-600 py-4">{product.decricaoCurta}</p>
                     </div> : <BiLoaderAlt className="animate-spin" size={30} />}
 
-                <div className="flex items-center justify-end gap-4">
+                <div className="flex flex-col lg:flex-row items-end justify-end gap-4">
                     <button onClick={() => navigate(-1) || navigate('/')} className="text-gray-600 pr-4 border-r"><TbArrowBackUp size={30} /></button>
                     <form onSubmit={evt => {
                         evt.preventDefault();
@@ -57,17 +57,17 @@ const ProdutoDetalhes = () => {
 
             {products.length > 0 && product !== undefined ?
                 <div>
-                    <div className="py-12 flex gap-10">
+                    <div className="py-12 flex flex-col lg:flex-row gap-10">
                         <div>
-                            <div className="w-80 h-80 shadow-xl">
+                            <div className="h-full w-full lg:w-80 lg:h-80 shadow-xl">
                                 <img src={product.imagem} className="h-full w-full object-cover" alt="" />
-                                <div className="-translate-y-full z-10 relative flex justify-end">
+                                <div className=" z-10 relative flex justify-end">
                                     {product.promocao &&
-                                        <span className="bg-promocao text-sm pb-3 px-6 text-white">
+                                        <span className="-translate-y-full bg-promocao absolute text-sm pb-3 px-6 text-white">
                                             Promoção
                                         </span>}
                                     {product.exclusivo &&
-                                        <span className="bg-exclusivo text-sm pb-3 px-6 text-white">
+                                        <span className="-translate-y-full bg-exclusivo text-sm pb-3 px-6 text-white">
                                             Exclusivo
                                         </span>}
                                 </div>
@@ -81,7 +81,7 @@ const ProdutoDetalhes = () => {
                     <h2 className="text-xl font-semibold text-gray-800">Ficha Técnica</h2>
                     <hr className="my-6" />
                     <div>
-                        <ul style={{ listStyle: 'inside' }} className="grid grid-cols-3 gap-4">
+                        <ul style={{ listStyle: 'inside' }} className="grid md:grid-cols-3 gap-4">
                             {product.fichaTecnica.map(ficha => <li className="text-gray-700">{ficha.titulo}: {ficha.descricao}</li>)}
                         </ul>
                     </div>
